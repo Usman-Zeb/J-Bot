@@ -8,7 +8,6 @@ from llama_index.core.query_engine import PandasQueryEngine
 from llama_index.core import StorageContext, VectorStoreIndex, load_index_from_storage
 from llama_index.readers.file import CSVReader
 from prompts import new_prompt, instruction_str, context
-import torch
 from transformers import BitsAndBytesConfig
 from llama_index.llms.huggingface import HuggingFaceLLM
 from note_engine import note_engine
