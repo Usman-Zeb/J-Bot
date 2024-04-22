@@ -1,21 +1,21 @@
-from flask import Flask, request, jsonify
-import bot
-from flask_cors import CORS, cross_origin
+# app/main.py
+from fastapi import FastAPI
+from app.index_generator import generate_indexes
+from app.index_listener import start_listener
+from typing import Dict
+from app.api import router as api_router
+from llama_index.core import VectorStoreIndex
 
-app= Flask(__name__)
-CORS(app)
+app = FastAPI()
+indexes: Dict[str, VectorStoreIndex] = {}
 
-@app.route('/post_json', methods=['POST'])
-@cross_origin(origin='*',methods=['GET','POST'])
-def process_json():
-    content_type = request.headers.get('Content-Type')
-    if (content_type == 'application/json'):
-        json = request.get_json()
-        message = json.get('prompt')
-        return jsonify(bot.Chat(message))
-    else:
-        return 'Content-Type not supported!'
+def update_indexes(csv_path):
+    global indexes
+    indexes = generate_indexes(csv_path=csv_path)
+    print("Indexes updated")
 
-if __name__ == "__main__":
-    bot.BotInitialize()
-    app.run(debug=True)
+@app.on_event("startup")
+def startup_event():
+    # update_indexes()
+    start_listener(update_indexes)
+app.include_router(api_router)
