@@ -4,10 +4,6 @@
 
 Built on **OpenAI’s GPT-3.5-turbo** API, Ask J-Bot leverages advanced **Natural Language Processing (NLP)** to offer a seamless conversational interface, allowing users to quickly and efficiently obtain the information they need.
 
-
-[Watch the video](https://github.com/user-attachments/assets/4790ad29-b9f0-45a8-80db-3d3183ace1a5)
-
-
 ## Features
 
 - **Information on Jazz Packages**: Provides up-to-date details on voice, data, and SMS packages tailored to customer needs.
@@ -15,8 +11,9 @@ Built on **OpenAI’s GPT-3.5-turbo** API, Ask J-Bot leverages advanced **Natura
 - **Guidance on SOPs**: Clarifies standard operating procedures to help customers navigate services effortlessly.
 - **Guidance on Complaints**: Assists customers with various complaints, offering tailored resolutions to enhance overall satisfaction.
 
-Walkthrough:
+## Walkthrough:
 
+[Watch the walkthrough video of Ask J-Bot in action](https://github.com/user-attachments/assets/23605a79-3f30-4acd-920a-e0c2476915c9)
 
 ## How It Works
 
